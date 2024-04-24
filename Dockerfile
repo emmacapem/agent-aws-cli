@@ -19,7 +19,7 @@ RUN unzip awscliv2.zip
 RUN ./aws/install
 RUN apt-get install -y git
 
-RUN groupadd -g 992 docker && \
+RUN groupadd -g 2375 docker && \
     usermod -a -G docker jenkins
 
 USER jenkins
