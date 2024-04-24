@@ -18,3 +18,10 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 RUN unzip awscliv2.zip
 RUN ./aws/install
 RUN apt-get install -y git
+
+RUN groupadd -g 992 docker && \
+    usermod -a -G docker jenkins
+
+USER jenkins
+
+RUN touch v1.0.0.txt
